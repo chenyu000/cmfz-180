@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.baizhi.dao.UserMapper">
+
+
+    <!--
+          查询每月注册的人数
+    -->
+    <select id="selectMonthAllByRegister" resultType="com.baizhi.commons.MapDto">
+      SELECT
+          COUNT(ID) count,
+          MONTH(CREATE_DATE) month
+      FROM
+          t_user
+      GROUP BY
+          MONTH(CREATE_DATE)
+      ORDER BY
+          MONTH(CREATE_DATE)
+  </select>
+
+
+</mapper>

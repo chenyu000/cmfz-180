@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.baizhi.dao.TeacherMapper">
+    <resultMap id="aaa" type="Teacher">
+        <id column="tid" property="id"/>
+        <result column="tname" property="name"/>
+        <result column="project" property="project"/>
+        <collection property="list" ofType="Student">
+            <id column="sid" property="id"/>
+            <result column="sname" property="name"/>
+            <result column="age" property="age"/>
+            <result column="sex" property="sex"/>
+            <result column="bir" property="bir"/>
+            <result column="head_img" property="head_img"/>
+        </collection>
+    </resultMap>
+
+
+    <select id="queryAll" resultMap="aaa">
+        select t.id tid, t.name tname, t.project, s.id sid, s.name sname, s.age, s.sex, s.bir, s.head_img
+        from teacher t join student s
+        on t.id = s.teacher_id
+    </select>
+
+</mapper>
