@@ -13,6 +13,8 @@ public class App {
         SpringApplication.run(App.class, args);
         System.out.println("你好");
         System.out.println("how are you?");
+        System.out.println("挺好");
+        
 
     }
 
