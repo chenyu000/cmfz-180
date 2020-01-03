@@ -11,11 +11,6 @@ public class App {
     public static void main(String[] args) {
 
         SpringApplication.run(App.class, args);
-        System.out.println("你好");
-        System.out.println("how are you?");
-        System.out.println("挺好");
-        
-
     }
 
 }
